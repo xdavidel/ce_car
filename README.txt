@@ -1,3 +1,2 @@
-C++ Exercise: Car 2
-Optimize your Car class (use existing GitHub project) using references
-where applicable.
+C++ Exercise: Car 3
+Improve your Car class by adding const where applicable.
