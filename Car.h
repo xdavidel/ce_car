@@ -3,38 +3,38 @@
 
 using namespace std;
 
-#define COLOR_SIZE 10
+const size_t COLOR_SIZE = 10;
 
 class Car
 {
 	private:
-	string make;
-	string model;
-	int year;
-	int engineVolume;
-	char color[ 10 ];
+	string m_make;
+	string m_model;
+	int m_year;
+	int m_engineVolume;
+	char m_color[ 10 ];
 
 	public:
 	Car();
 	Car(string make, string model, size_t year, size_t volume, char color[ COLOR_SIZE ]);
 	~Car();
 
-	void setMake(string make);
-	string getMake();
+	void setMake(const string &make);
+	string getMake() const;
 
-	void setModel(string model);
-	string getModel();
+	void setModel(const string &model);
+	string getModel() const;
 
 	void setYear(size_t year);
-	int getYear();
+	int getYear() const;
 
 	void setEngineVolume(size_t volume);
-	int getEngineVolume();
+	int getEngineVolume() const;
 
-	void setColor(char color[ COLOR_SIZE ] );
-	char *getColor();
+	void setColor(const char color[ COLOR_SIZE ] );
+	const char* getColor() const;
 
-	const Car& compare(const Car& other);
+	const Car& compare(const Car& other) const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Car& car);
 };
