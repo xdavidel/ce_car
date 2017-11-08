@@ -12,8 +12,8 @@ int main()
 	Car anotherPeguet(peguet);
 
 	cout << peguet;
-	cout << peguet.compare(ford);
-	cout << peguet.compare(anotherPeguet);
+	cout << peguet.Compare(ford);
+	cout << peguet.Compare(anotherPeguet);
 
 	system("pause");
 	return 0;
