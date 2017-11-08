@@ -10,6 +10,15 @@ Car::Car(string make, string model, size_t year, size_t volume, char color[ COLO
 	strcpy_s(this->m_color, COLOR_SIZE, color);
 }
 
+Car::Car(const Car& other):
+	m_make(other.getMake()),
+	m_model(other.getModel()),
+	m_year(other.getYear()), 
+	m_engineVolume(other.getEngineVolume())
+{
+	strcpy_s(this->m_color, COLOR_SIZE, other.getColor());
+}
+
 
 Car::~Car()
 {

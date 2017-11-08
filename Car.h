@@ -17,6 +17,7 @@ class Car
 	public:
 	Car();
 	Car(string make, string model, size_t year, size_t volume, char color[ COLOR_SIZE ]);
+	Car(const Car&);
 	~Car();
 
 	void setMake(const string &make);
