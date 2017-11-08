@@ -4,19 +4,19 @@ Car::Car()
 {
 }
 
-Car::Car(string make, string model, size_t year, size_t volume, char color[ COLOR_SIZE ])
-	:m_make(make),m_model(model),m_year(year),m_engineVolume(volume)
+Car::Car(string make, string model, size_t year, size_t volume, char color[COLOR_SIZE])
+	:m_make(make), m_model(model), m_year(year), m_engineVolume(volume)
 {
 	strcpy_s(this->m_color, COLOR_SIZE, color);
 }
 
-Car::Car(const Car& other):
-	m_make(other.getMake()),
-	m_model(other.getModel()),
-	m_year(other.getYear()), 
-	m_engineVolume(other.getEngineVolume())
+Car::Car(const Car& other) :
+	m_make(other.GetMake()),
+	m_model(other.GetModel()),
+	m_year(other.GetYear()),
+	m_engineVolume(other.GetEngineVolume())
 {
-	strcpy_s(this->m_color, COLOR_SIZE, other.getColor());
+	strcpy_s(this->m_color, COLOR_SIZE, other.GetColor());
 }
 
 
@@ -24,56 +24,56 @@ Car::~Car()
 {
 }
 
-void Car::setMake(const string &make)
+void Car::SetMake(const string &make)
 {
 	this->m_make = make;
 }
-string Car::getMake() const
+string Car::GetMake() const
 {
 	return this->m_make;
 }
 
-void Car::setModel(const string &model)
+void Car::SetModel(const string &model)
 {
 	this->m_model = model;
 }
 
-string Car::getModel() const
+string Car::GetModel() const
 {
 	return this->m_model;
 }
 
-void Car::setYear(size_t year)
+void Car::SetYear(size_t year)
 {
 	this->m_year = year;
 }
 
-int Car::getYear() const
+int Car::GetYear() const
 {
 	return this->m_year;
 }
 
-void Car::setEngineVolume(size_t volume)
+void Car::SetEngineVolume(size_t volume)
 {
 	this->m_engineVolume = volume;
 }
 
-int Car::getEngineVolume() const
+int Car::GetEngineVolume() const
 {
 	return this->m_engineVolume;
 }
 
-void Car::setColor(const char color[ COLOR_SIZE ])
+void Car::SetColor(const char color[COLOR_SIZE])
 {
 	strcpy_s(this->m_color, COLOR_SIZE, color);
 }
 
-const char* Car::getColor() const
+const char* Car::GetColor() const
 {
 	return this->m_color;
 }
 
-const Car& Car::compare(const Car& other) const
+const Car& Car::Compare(const Car& other) const
 {
 	if (this->m_year < other.m_year)
 	{
@@ -95,6 +95,12 @@ const Car& Car::compare(const Car& other) const
 		}
 	}
 }
+
+const Car & Car::CompareSize(const Car & car1, const Car &car2)
+{
+	return car1.GetEngineVolume() > car2.GetEngineVolume() ? car1 : car2;
+}
+
 
 std::ostream &operator<<(std::ostream &os, Car const &car)
 {

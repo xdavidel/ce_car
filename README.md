@@ -1,3 +1,4 @@
-# C++ Exercise: Car 4
-Improve your Car class by adding a copy constructor and using initialization
-list where applicable.
+# C++ Exercise: Car 5
+
+Add comparison methods to your Car class, each one receiving two Car
+objects and returning the “larger” one.

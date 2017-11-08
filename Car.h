@@ -7,35 +7,36 @@ const size_t COLOR_SIZE = 10;
 
 class Car
 {
-	private:
+private:
 	string m_make;
 	string m_model;
 	int m_year;
 	int m_engineVolume;
-	char m_color[ 10 ];
+	char m_color[10];
 
-	public:
+public:
 	Car();
-	Car(string make, string model, size_t year, size_t volume, char color[ COLOR_SIZE ]);
+	Car(string, string, size_t, size_t, char[COLOR_SIZE]);
 	Car(const Car&);
 	~Car();
 
-	void setMake(const string &make);
-	string getMake() const;
+	void SetMake(const string &);
+	string GetMake() const;
 
-	void setModel(const string &model);
-	string getModel() const;
+	void SetModel(const string&);
+	string GetModel() const;
 
-	void setYear(size_t year);
-	int getYear() const;
+	void SetYear(size_t);
+	int GetYear() const;
 
-	void setEngineVolume(size_t volume);
-	int getEngineVolume() const;
+	void SetEngineVolume(size_t);
+	int GetEngineVolume() const;
 
-	void setColor(const char color[ COLOR_SIZE ] );
-	const char* getColor() const;
+	void SetColor(const char[COLOR_SIZE]);
+	const char* GetColor() const;
 
-	const Car& compare(const Car& other) const;
+	const Car& Compare(const Car&) const;
+	static const Car& CompareSize(const Car&, const Car&);
 
 	friend std::ostream& operator<<(std::ostream& os, const Car& car);
 };
